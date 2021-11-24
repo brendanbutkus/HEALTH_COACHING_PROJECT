@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peak Performance</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p style="color:red">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <h1>Edit: {{ plan.name}}</h1>
+    <form action="/plans/create" method="POST">
+        Name of plan:<br>
+        <input type="text" name="name" value="{{plan.name}}"><br><br>
+        Fitness:<br>
+        <input type="number" name="fitness" min="5" max="120" value="{{plan.fitness}}"><br><br>
+        Yoga:<br>
+        <input type="number" name="yoga" min="5" max="120" value="{{plan.yoga}}"><br><br>
+        Meditation:<br>
+        <input type="number" name="meditation" min="1" max="120" value="{{plan.meditation}}"><br><br>
+        Cold Shower:<br>
+        <input type="number" name="cold_shower" min="1" max="20" value="{{plan.cold_shower}}"><br><br>
+        What time will you check the app?:<br>
+        <input type="time" name="check_app" value="{{plan.check_app}}"><br><br>
+        What days will you do the routine:<br>
+        <input type="radio" id="monday" name="frequency" value="{{plan.frequency}}">
+        <label for="monday">Monday</label><br>
+        <input type="radio" id="tuesday" name="frequency" value="{{plan.frequency}}">
+        <label for="tuesday">Tuesday</label><br>
+        <input type="radio" id="wednesday" name="frequency" value="{{plan.frequency}}">
+        <label for="wednesday">Wednesday</label><br>
+        <input type="radio" id="thursday" name="frequency" value="{{plan.frequency}}">
+        <label for="thursday">Thursday</label><br>
+        <input type="radio" id="friday" name="frequency" value="{{plan.frequency}}">
+        <label for="friday">Friday</label><br>
+        <input type="radio" id="saturday" name="frequency" value="{{plan.frequency}}">
+        <label for="saturday">Saturday</label><br>
+        <input type="radio" id="sunday" name="frequency" value="{{plan.frequency}}">
+        <label for="sunrday">Sunday</label><br><br>
+        How will you hold yourself accountable?:<br>
+        <textarea name="accountable" id="" cols="30" rows="10" value="{{plan.accountable}}"></textarea><br><br>
+        Who can help you?:<br>
+        <textarea name="help" id="" cols="30" rows="10" value="{{plan.help}}"></textarea><br><br>
+        When would you like a reminder sent?:<br>
+        <input type="time" name="reminder" value="{{plan.reminder}}"><br><br>
+        <input type="submit" value="Update">      
+    </form>
+    <br>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/logout">Logout</a>
+    
+    
+</body>
+</html>

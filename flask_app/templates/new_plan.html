@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Peak Performance</title>
+</head>
+<nav>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/logout">Logout</a>    
+</nav>
+<body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p style="color:red">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <h1 class="display-5 text-center text-success" >Create your plan:</h1>
+    <div class="d-flex justify-content-around text-secondary" >
+        <form action="/plans/create" method="POST" class="col-4 p-4 bg-primary text-light">
+            <div class="form-group">
+                Name of plan:<br>
+                <input type="text" name="name" class="form-control"><br>
+            </div>
+            <div class="form-group">
+                Fitness:<br>
+                <input type="number" name="fitness" min="5" max="120"><br>
+            </div>
+            <div class="form-group">
+                Yoga:<br>
+                <input type="number" name="yoga" min="5" max="120"><br>
+            </div>
+            <div class="form-group">
+                Meditation:<br>
+                <input type="number" name="meditation" min="1" max="120"><br>
+            </div>
+            <div class="form-group">
+                Cold Shower:<br>
+                <input type="number" name="cold_shower" min="1" max="20"><br>
+            </div>
+            <div class="form-group">
+                What time will you check the app?:<br>
+                <input type="time" name="check_app"><br>
+            </div>
+            <div class="form-group">
+                What days will you do the routine:<br>
+                <input type="radio" id="monday" name="frequency" value="Monday">
+                <label for="monday">Monday</label><br>
+                <input type="radio" id="tuesday" name="frequency" value="Tuesday">
+                <label for="tuesday">Tuesday</label><br>
+                <input type="radio" id="wednesday" name="frequency" value="Wednesday">
+                <label for="wednesday">Wednesday</label><br>
+                <input type="radio" id="thursday" name="frequency" value="Thursday">
+                <label for="thursday">Thursday</label><br>
+                <input type="radio" id="friday" name="frequency" value="Friday">
+                <label for="friday">Friday</label><br>
+                <input type="radio" id="saturday" name="frequency" value="Saturday">
+                <label for="saturday">Saturday</label><br>
+                <input type="radio" id="sunday" name="frequency" value="Sunday">
+                <label for="sunday">Sunrday</label><br><br>
+            </div>
+            <div class="form-group">
+                How will you hold yourself accountable?:<br>
+                <textarea name="accountable" id="" cols="30" rows="10" class="form-control"></textarea><br>
+            </div>
+            <div class="form-group">
+                Who can help you?:<br>
+                <textarea name="help" id="" cols="30" rows="10" class="form-control"></textarea><br>
+            </div>
+            <div class="form-group">
+                When would you like a reminder sent?:<br>
+                <input type="time" name="reminder"><br>
+            </div><br>
+            <input type="submit" value="Add" class="btn btn-secondary">      
+        </form>
+    </div>
+    <br>
+    
+    
+</body>
+</html>
