@@ -1,7 +1,5 @@
 Health coaching Application
 
-Description
-
 Python3-based app for users to create, update, delete, and share health coaching templates.  Based upon the idea of habit stacking - grouping together small to medium sized activities into one routine.  
 
 Included in the app is a motivational quote button that generates a random motivational quote using javascript.  
