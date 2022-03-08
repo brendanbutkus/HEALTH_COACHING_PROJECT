@@ -9,3 +9,5 @@ Included in the app is a motivational quote button that generates a random motiv
 The main purposes of this project are:
 1) practice coding using: Python, flask, bcrypt, and MySQL
 2) begin to create an app that someone can use to coach themselves into more a more ideal state of health
+
+What I hope to acheive in the future, is to add multiple choice questionaires for users that will use algorithms to supply health coaching suggestions based upon the selected responses.
